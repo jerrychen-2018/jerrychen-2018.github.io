@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hi there!</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/8a1b72fa48.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <!-- NavBar Section -->
+        <nav class="navbar">
+            <a href="#home" class="navbar__logo">JC</a>
+            <div class="navbar_toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <div class="navbar__menu">
+                <a href="#home" class="navbar__link">Home</a>
+                <a href="#about" class="navbar__link">About Me</a>
+                <a href="#resume" class="navbar__link">Resume</a>
+                <a href="#projects" class="navbar__link">Projects</a>
+                <a href="#contact" class="navbar__link">Contact</a>
+            </div>
+        </nav>
+        <!-- Hero Section -->
+        
+
+        
+        <div class="hero" id="home">
+            <div class="hero__content">
+                <img src='./images/portrait-two.jpg' class="p-round" width="130" height="130" alt="Avatar">
+                <h1>Jerry Chen</h1>
+                <p>Welcome to my page.</p>
+                <a href="#resume" class="button">View Resume</a>
+            </div>
+        </div>
+        <!-- About Me Section -->
+        
+        <div class="allbody">
+            <div class="hero" id="about">
+                <div class="hero__about">
+                    <h2>Who Am I?</h2>
+                    <p>I am a third-year undegraduate student at Purdue University, West Lafayette, studying Computer Science and Data Science.
+                        <br>I love exploring and using different technologies in the realm of software and web development, and I am constantly trying out new tools and libraries by creating.
+                        Oh, and feel free to treat me coffee or boba&mdash;they're my favorites.
+                    </p>
+                </div>
+            </div>
+            <div class="hero" id="resume">
+                <div class="hero__resume">
+                    <h2>Resume</h2>
+                    <div class="pdf" id="currresume">
+                        <img src="./images/resume.jpg" alt="resume" width="510" height="660">
+                    </div>
+                </div>
+            </div>
+            <div class="hero" id="projects">
+                <div class="hero__projects">
+                    <h2>Projects</h2>
+                </div>
+            </div>
+            <div class="hero" id="contact">
+                <div class="hero__contact">
+                    <div class="contact-section-header">
+                        <h2>Let's get in touch!</h2>
+                    </div>
+                    <div class="contact-links">
+                        <a href="https://www.facebook.com/jerrychen2000/" target="_blank" class="btn contact-details"><i class="fab fa-facebook"></i> Facebook</a>
+                        <a href="https://www.facebook.com/jerrychen2000/" target="_blank" class="btn contact-details"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://www.facebook.com/jerrychen2000/" target="_blank" class="btn contact-details"><i class="fab fa-instagram"></i> Instagram</a>
+                        <a href="mailto:jerrychen2018@gmail.com" class="btn contact-details"><i class="fas fa-envelope"></i> Email</a>
+                        <!-- <form action="https://www.facebook.com/jerrychen2000/" target="_blank">
+                            <input type="submit" value="Facebook">
+                        </form> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            function isElementInViewport (el) {
+                if (typeof jQuery === "function" && el instanceof jQuery) {
+                    el = el[0];
+                }
+                var rect = el.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerHeight || document.documentElement.clientWidth) 
+                );
+            }
+
+            $("a").click(function (e) {
+                // e.preventDefault();
+                var section = this.href;
+                var sectionClean = section.substring(section.indexOf("#"));
+                $("html, body").animate({
+                    scrollTop: $(sectionClean).offset().top
+                }, 1000, function () {
+                    window.location.hash = sectionClean;
+                });
+            });
+
+            $(document).on("scroll", function() {
+                $(".hero").each(function (idx, el) {
+                    if ( isElementInViewport(el)) {
+                        if (window.history.pushState) {
+                        var urlHash = "#" + $(el).attr("id");
+                        window.history.pushState(null, null, urlHash);
+                        }
+                    }
+                });
+            });
+        </script>
+
+    </body>
+</html>

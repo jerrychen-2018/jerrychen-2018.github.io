@@ -1,0 +1,223 @@
+:root {
+    --blue: #6997cc;
+    --black: #000;
+    --white: #fff;
+    --dark-blue: rgb(18, 4, 95);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Rubik', sans-serif;
+}
+
+.navbar {
+    background: var(--black);
+    height: 60px;
+    padding: 0.5rem calc((100vw - 1200px) / 2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+}
+
+.navbar__logo {
+    color: var(--white);
+    text-decoration: none;
+    padding-left: 1rem;
+    font-size:1.5rem;
+}
+
+.navbar__link {
+    color: var(--white);
+    text-decoration: none;
+    padding: 0rem 2rem;
+}
+
+.navbar__link:hover {
+    color: var(--blue);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.1)), url('./images/sf-bay.jpg');
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    padding: 0.5rem calc((100vw - 1200px) / 2);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.p-round {
+    border-radius:50%;
+    border: 5px solid #fff;
+    margin-bottom: 1.5rem;
+}
+
+.pdf {
+    display: flex;
+    align-items: center;
+}
+
+.hero__content {
+    color: var(--white);
+    padding: 3rem 1rem;
+    line-height: 1;
+}
+
+.hero__content h1 {
+    font-size: clamp(3rem, 8vw, 7rem);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.hero__content p {
+    font-size: clamp(1rem, 4vw, 2.5rem);
+    margin-bottom: 3rem;
+}
+
+.hero__resume {
+    padding: 3rem 1rem;
+    line-height: 1;
+}
+
+.hero__resume h2 {
+    font-size: clamp(3rem, 8vw, 7rem);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    float: left;
+    
+}
+
+.hero__about {
+    padding: 3rem 1rem;
+    line-height: 1;
+}
+
+.hero__about h2 {
+    font-size: clamp(3rem, 8vw, 7rem);                                                                                                  
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    padding-bottom: 3rem;
+}
+
+.hero__about p {
+    font-size: clamp(1.8rem, 2.5vw, 2.8rem);
+    margin-bottom: 3rem;
+}
+
+.hero__projects h2 {
+    font-size: clamp(3rem, 8vw, 7rem);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.hero__contact h2 {
+    font-size: clamp(3rem, 8vw, 7rem);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.button {
+    padding: 1rem 3rem;
+    border: none;
+    background: var(--blue);
+    color: var(--white);
+    font-size: 1rem;
+    cursor: pointer;
+    outline: none;
+    transition: 0.3s ease;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.button:hover {
+    background: var(--black);
+
+}
+
+/* Pages */
+body {
+    float: left;
+    width: 100%;
+    padding-bottom: 0px;
+}
+
+.common {
+    width: 100%;
+    float: left;
+    height: 100vh;
+    display: table;
+}
+
+.allbody {
+    float: left;
+    width: 100%;
+}
+.hero h2 {
+    font-size: 30px;
+    color: #fff;
+    text-align: center;
+    padding-top: 10%;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#currresume {
+    padding-left: 10%;
+}
+
+#about {
+    background: #999;
+}
+
+#projects {
+    background: rgb(82, 78, 78);
+}
+
+#resume {
+    background: #c1c1c1;
+}
+
+#contact {
+    background: #000;
+}
+
+.contact-links {
+    display: flex;
+    width: 100%;
+    margin-top: 4rem;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
+    
+}
+
+.contact-links a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.contact-details {
+    font-size: 2.4rem;
+    text-shadow: 2px 2px 1px #1f1f1f;
+    transition: transform 0.3s ease-out;
+}
+
+.contact-details:hover {
+    transform: translateY(8px);
+}
+
+.hero__contact {
+    padding: 0 2rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 80vh;
+}
